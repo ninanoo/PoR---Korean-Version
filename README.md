@@ -181,19 +181,19 @@ a      : relevancy factor ( a > 1 )
 
 제외시킬 수 있는 권한을 갖는 블록들의 정확한 수는 관련성 인자에 의해 정해집니다.
 관련성 배율 그래프에서 `0`에 근접하지 않은 의미 있는 배율을 갖는 블록들이 이에 해당합니다.
-이는 관련성 배율 곡선의 변화량과 관계있습니다.
+이는 관련성 배율 곡선의 변화량(derivative)과 관계있습니다.
 
 다음의 그래프는 위에서 살펴본 관련성 인자별 관련성 배율 곡선들과 그들의 변화량에 대한 곡선들을 함께 나타낸 것입니다.
 
-![relevancyRatioDifferential](relevancyRatioDifferential.png?raw=true "relevancyRatioDifferential")
+![relevancyRatioDerivative](relevancyRatioDerivative.png?raw=true "relevancyRatioDerivative")
 
 위쪽이 관련성 인자별 관련성 배율 곡선들이고 아래쪽이 각 곡선들의 `n / c`에 대한 변화량 곡선들입니다.
 
 아래는 변화량 산출에 사용된 식입니다.
 
-![relevancyRatioDifferentialFormula](relevancyRatioDifferentialFormula.png?raw=true "relevancyRatioDifferentialFormula")
+![relevancyRatioDerivativeFormula](relevancyRatioDerivativeFormula.png?raw=true "relevancyRatioDerivativeFormula")
 ```
-d : differential
+d : derivative
 c : number of following blocks including the target block ( c > 0 )
 n : sequence number of candidate blocks starting with 0 ( n < c )
 a : relevancy factor ( a > 1 )
