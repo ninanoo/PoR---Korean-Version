@@ -119,12 +119,12 @@ a      : relevancy factor ( a > 1 )
 
 ![expectedRelevancyFormula](expectedRelevancyFormula.png?raw=true "expectedRelevancyFormula")
 ```
-r      : relevancy
-c      : number of following blocks including the target block ( c > 0 )
-n      : sequence number of candidate blocks starting with 0 ( n < c )
-m of n : maximum number of consecutive bits except the difficulty bits ( m > 0 )
-d      : difficulty bits ( d > 0 )
-a      : relevancy factor ( a > 1 )
+r : relevancy
+c : number of following blocks including the target block ( c > 0 )
+n : sequence number of candidate blocks starting with 0 ( n < c )
+m : maximum number of consecutive bits except the difficulty bits ( m > 0 )
+d : difficulty bits ( d > 0 )
+a : relevancy factor ( a > 1 )
 ```
 
 각 블록의 자체 관련성은 난이도를 포함하면서 첫 번째 블록의 `m` 비트부터 마지막 블록의 `m / c` 비트까지 추가된 순서의 균일한 비율로 분포합니다.
