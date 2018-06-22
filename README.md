@@ -2,11 +2,11 @@
 
 <br/>
 
-# PoR ( Proof of Relevancy )
+# PoR ( Proof of Relevance )
 
 ### 관련성에 의한 증명 ( 관련성에 의해 결정되는 블록체인 합의 알고리즘 )
 
-관련성에 의한 증명(proof of relevancy)은 인접 블록 간에 각 블록의 소유정보(proprietary information)로부터 구해진 관련성(relevancy)에 의해 다음 블록이 정해지는 블록체인 합의 알고리즘(blockchain consensus algorithm) 입니다.
+관련성에 의한 증명(proof of relevance)은 인접 블록 간에 각 블록의 소유정보(proprietary information)로부터 구해진 관련성(relevance)에 의해 다음 블록이 정해지는 블록체인 합의 알고리즘(blockchain consensus algorithm) 입니다.
 관련성은 작업증명(proof of work)의 작업이나 지분증명(proof of stake)의 지분으로부터 만들어 질 수도 있습니다.
 여기서는 서명 생성에 사용되는 각 블록의 공개키와 개인키 쌍을 관련성을 만드는 소유정보로도 사용합니다.
 
@@ -16,7 +16,7 @@
 인증블록체인에는 원장에 대한 인증이 등록이 됩니다.
 등록된 후보는 이중체인의 사용으로 인해 매우 긴 시간 이후에 실제 인증을 생성할 수 있고 그때도 경쟁이 이루어집니다.
 
-인증을 생성할 후보로 등록되기 위한 경쟁에 관련성이 사용되고 실제 인증을 생성할 때의 경쟁에 역관련성(reverse relevancy)이 사용됩니다.
+인증을 생성할 후보로 등록되기 위한 경쟁에 관련성이 사용되고 실제 인증을 생성할 때의 경쟁에 역관련성(reverse relevance)이 사용됩니다.
 두 경쟁상황들은 모두 관련성을 기반으로 한 시간에 대한 경쟁으로 개인의 이익을 위한 것들입니다.
 그로 인해 'nothing at stake' 등과 같은 문제가 발생하지 않습니다.
 
@@ -55,12 +55,12 @@
 
 <br/>
 
-## 관련성과 합의 방법 ( Relevancy and Consensus Mechanism )
+## 관련성과 합의 방법 ( Relevance and Consensus Mechanism )
 
 새로 추가될 후보블록들은 네트워크에서 끊임없는 확산 수렴 과정을 거치며 앞 블록과 가장 관련성이 높은 블록으로 합의가 됩니다.
 모든 블록체인 알고리즘은 원장에 대한 서명을 생성하기 위해 공개키와 개인키 쌍을 사용합니다.
 여기서는 공개키와 개인키 쌍을 서명 생성 용도만이 아니라 소유정보인 소유키로도 사용합니다.
-어느 한 블록의 자체 관련성(self relevancy)은 앞 블록의 해시값과 해당 블록의 공개키(public key)를 첫 비트부터 비트순으로 비교하였을 때 연속해서 일치하는 비트들의 수를 통해서 생성 됩니다.
+어느 한 블록의 자체 관련성(self relevance)은 앞 블록의 해시값과 해당 블록의 공개키(public key)를 첫 비트부터 비트순으로 비교하였을 때 연속해서 일치하는 비트들의 수를 통해서 생성 됩니다.
 네트워크에서의 불필요한 경쟁 상황을 줄이기 위해 작업증명의 것과 유사한 난이도(difficulty)를 갖습니다.
 난이도는 일치하여야 하는 최소 비트수로 작업을 증명하기 위한 목적은 아닙니다.
 
@@ -78,31 +78,31 @@
 추가될 블록은 체인의 끝이 아니더라도 관련성이 기존 블록보다 더 높으면 해당 블록을 대체할 수 있고 기존 블록의 하위 블록들도 함께 버려집니다.
 이는 반대로 추가될 블록의 자체 관련성이 상대적으로 낮더라도 다수의 블록들이 뒤따르고 있으면 더 좋은 자체 관련성을 갖고 있는 기존 블록일지라도 경쟁에서 질 수 있습니다.
 관련성과 함께 합의에 더 빨리 참여할수록 선택될 확률이 높아집니다.
-이를 수치적으로 조절하기 위해 지수 감소하는 비율로 처리가 되는 관련성 산출식과 그에 대한 관련성 인자(relevancy factor)가 사용됩니다.
+이를 수치적으로 조절하기 위해 지수 감소하는 비율로 처리가 되는 관련성 산출식과 그에 대한 관련성 인자(relevance factor)가 사용됩니다.
 전체 관련성은 점점 더 높아지면서 블록의 수는 더 적어지도록 계속해서 합의가 이루어집니다.
 체인의 앞부분부터 충분한 관련성을 갖는 블록들로 채워지게 되고 실제 트랜잭션은 체인의 뒷부분의 블록들에서만 일어납니다.
 
 아래는 어느 한 블록의 관련성을 산출하는 식입니다.
 
-![relevancyFormula](relevancyFormula.png?raw=true "relevancyFormula")
+![relevanceFormula](relevanceFormula.png?raw=true "relevanceFormula")
 ```
-r      : relevancy
+r      : relevance
 c      : number of following blocks including the target block ( c > 0 )
 n      : sequence number of candidate blocks starting with 0 ( n < c )
 m of n : number of consecutive bits with the same value as the previous hash value starting from the beginning
-a      : relevancy factor ( a > 1 )
+a      : relevance factor ( a > 1 )
 ```
 
 `r`은 `n = 0`인 `0`번째 블록의 누적 관련성으로 `c - 1`개의 하위 블록들이 뒤따르고 있습니다.
 `2 ^ m`은 각 `n`번째 하위 블록의 자체 관련성입니다.
-`a ^ (-n / c)`은 각 `n`번째 하위 블록의 관련성 배율(relevancy ratio)입니다.
+`a ^ (-n / c)`은 각 `n`번째 하위 블록의 관련성 배율(relevance ratio)입니다.
 누적 관련성을 계산하려는 `0`번째 블록의 관련성 배율은 언제나 `1`로서 뒤따르는 블록들이 없는 경우 누적 관련성은 자체 관련성과 같습니다.
 각 하위 블록의 자체 관련성에 각자의 관련성 배율이 곱해지고 이들을 모두 더한 값이 어느 한 블록의 관련성이 됩니다.
 체인의 모든 후보들록들은 각각 자신을 `0`번째 블록으로 하여 위의 산출식을 통해 관련성을 계산합니다.
 
 아래는 `(2 ^ 16) ^ (-n / 10000)`의 관련성 배율 그래프입니다.
 
-![relevancyRatio1](relevancyRatio1.png?raw=true "relevancyRatio1")
+![relevanceRatio1](relevanceRatio1.png?raw=true "relevanceRatio1")
 
 위 그래프는 관련성 인자 `a`로 `2 ^ 16`을 사용했고 현재 `10000 - 1`개의 하위 블록들이 뒤따르고 있습니다.
 절반에 해당하는 `5000`번째 이전에 추가됐던 블록들부터 의미 있는 값을 갖기 시작해 1%에 해당하는 `100`번째 이전에 추가됐던 블록들은 `0.9` 이상의 값을 갖습니다.
@@ -110,7 +110,7 @@ a      : relevancy factor ( a > 1 )
 아래는 관련성 인자로 `2 ^ 16`을 사용하면서 `c`가 각각 10, 100, 10000일 때의 관련성 배율 그래프들입니다.
 `n / c`의 특성을 확인할 수 있는 그래프로 각 하위 블록들의 관련성 배율은 전체 하위 블록수 대비 각 블록의 위치에 대한 일정한 비율값을 갖습니다.
 
-![relevancyRatio2](relevancyRatio2.png?raw=true "relevancyRatio2")
+![relevanceRatio2](relevanceRatio2.png?raw=true "relevanceRatio2")
 
 블록의 수가 `10`일 때 `9`번째 블록의 관련성 배율은 `0`에 가까운 값입니다.
 이 블록에 하위 블록들이 추가되어 블록의 수가 `100`이 됐을 때 `9`번째 블록의 관련성 배율은 대략 `0.4`에 가까운 값을 갖습니다.
@@ -119,7 +119,7 @@ a      : relevancy factor ( a > 1 )
 
 다음은 `a ^ (-n / 10000)`의 관련성 배율 그래프로 위쪽의 곡선부터 각각 `2 ^ 2`, `2 ^ 4`, `2 ^ 8`, `2 ^ 16`, `2 ^ 32`의 관련성 인자를 사용합니다.
 
-![relevancyRatio3](relevancyRatio3.png?raw=true "relevancyRatio3")
+![relevanceRatio3](relevanceRatio3.png?raw=true "relevanceRatio3")
 
 그래프에서 볼 수 있듯이 관련성 인자가 커지면 지수 감소하는 관련성 배율의 감소폭도 커집니다.
 그로 인해 큰 관련성 인자를 사용할수록 누적 관련성은 작아지나 체인은 더 결정적으로 동작합니다.
@@ -134,27 +134,27 @@ a      : relevancy factor ( a > 1 )
 
 <br/>
 
-## 임계값과 관련성 효율비 ( Threshold Value and Relevancy Efficiency Ratio )
+## 임계값과 관련성 효율비 ( Threshold Value and Relevance Efficiency Ratio )
 
 첫 번째 후보블록인 리더블록은 다음 인증블록을 생성하기 위한 블록으로 확정되기 위해 임계값을 갖습니다.
 리더블록의 관련성이 임계값을 만족할 때까지 하위 블록들의 교체와 추가가 계속해서 이루어지며 관련성은 점점 더 높아집니다.
 리더블록의 관련성이 임계값에 다다르면 해당 블록은 개인키를 사용하여 인증블록의 생성을 시작하고 하위 블록의 추가는 더 이상 발생하지 않으나 관련성이 더 높은 경우 교체는 계속해서 이루어집니다.
 리더블록에 의해 생성된 인증블록의 배포가 시작되면 다음 후보블록이 리더블록이 되고 새 리더블록의 관련성을 기준으로 하위 블록들의 교체와 추가를 이어갑니다.
 
-단순하게 `r / c`는 관련성 산출에 포함된 블록들의 수 대비 해당 관련성으로 관련성 효율비(relevancy efficiency ratio)입니다.
+단순하게 `r / c`는 관련성 산출에 포함된 블록들의 수 대비 해당 관련성으로 관련성 효율비(relevance efficiency ratio)입니다.
 네트워크에서는 이 값이 더 높아지도록 계속해서 합의가 이루어집니다.
 이 값이 크면 각 블록들이 충분한 자체 관련성을 가지고 있는 것으로 임계값 산출을 위한 지표가 될 수도 있습니다.
 
 다음은 관련성 그래프를 모의실험하여 임계값을 추정하기 위한 관련성 산출식입니다.
 
-![expectedRelevancyFormula](expectedRelevancyFormula.png?raw=true "expectedRelevancyFormula")
+![expectedRelevanceFormula](expectedRelevanceFormula.png?raw=true "expectedRelevanceFormula")
 ```
-r : relevancy
+r : relevance
 c : number of following blocks including the target block ( c > 0 )
 n : sequence number of candidate blocks starting with 0 ( n < c )
 m : maximum number of consecutive bits except the difficulty bits ( m > 0 )
 d : number of difficulty bits ( d > 0 )
-a : relevancy factor ( a > 1 )
+a : relevance factor ( a > 1 )
 ```
 
 각 블록의 자체 관련성은 난이도를 포함하면서 첫 번째 블록의 `m` 비트부터 마지막 블록의 `m / c` 비트까지 추가된 순서의 균일한 비율로 분포합니다.
@@ -165,7 +165,7 @@ a : relevancy factor ( a > 1 )
 아래는 위의 관련성 산출식에서 `d`가 `8`이고 `m`도 `8`일 때의 관련성 그래프입니다.
 위쪽부터 각각 `2 ^ 2`, `2 ^ 4`, `2 ^ 8`, `2 ^ 16`, `2 ^ 32`의 관련성 인자를 사용합니다.
 
-![relevancy1](relevancy1.png?raw=true "relevancy1")
+![relevance1](relevance1.png?raw=true "relevance1")
 
 위의 그래프를 통해 각 관련성 인자별로 특정 임계값을 만족하기 위한 하위 블록들의 수를 대략적으로 확인할 수 있습니다.
 `2 ^ 16`의 관련성 인자를 사용하는 그래프의 경우 대략 `2 ^ 25`의 관련성을 갖기 위해 `10000`개의 블록이 필요합니다.
@@ -180,7 +180,7 @@ a : relevancy factor ( a > 1 )
 
 아래는 위의 그래프와 같은 난이도를 사용하나 `m`이 `12`일 때의 관련성 그래프입니다.
 
-![relevancy2](relevancy2.png?raw=true "relevancy2")
+![relevance2](relevance2.png?raw=true "relevance2")
 
 `2 ^ 16`의 관련성 인자를 사용하는 그래프의 경우 대략 `2 ^ 25`의 관련성을 갖기 위해 `1000`개의 블록이 필요합니다.
 일치하는 비트수가 `4`비트 증가했을 때 필요한 블록 수는 `1 / 10`로 줄었습니다.
@@ -203,7 +203,7 @@ a : relevancy factor ( a > 1 )
 
 <br/>
 
-## 역방향 관련성과 게임 이론 ( Reverse Relevancy and Game Theory )
+## 역방향 관련성과 게임 이론 ( Reverse Relevance and Game Theory )
 
 악의적인 의도나 네트워크 장애로 인해 임계값을 만족한 리더블록의 원장인증블록 배포가 지연되는 상황이 발생할 수 있습니다.
 이를 위해 모든 키블록은 역방향 관련성을 갖습니다.
@@ -226,18 +226,18 @@ a : relevancy factor ( a > 1 )
 
 다음의 그래프는 위에서 살펴본 관련성 인자별 관련성 배율 곡선들과 그들의 변화량에 대한 곡선들을 함께 나타낸 것입니다.
 
-![relevancyRatioDerivative](relevancyRatioDerivative.png?raw=true "relevancyRatioDerivative")
+![relevanceRatioDerivative](relevanceRatioDerivative.png?raw=true "relevanceRatioDerivative")
 
 위쪽이 관련성 인자별 관련성 배율 곡선들이고 아래쪽이 각 곡선들의 `n / c`에 대한 변화량 곡선들입니다.
 
 아래는 변화량 산출에 사용된 식입니다.
 
-![relevancyRatioDerivativeFormula](relevancyRatioDerivativeFormula.png?raw=true "relevancyRatioDerivativeFormula")
+![relevanceRatioDerivativeFormula](relevanceRatioDerivativeFormula.png?raw=true "relevanceRatioDerivativeFormula")
 ```
 d : derivative
 c : number of following blocks including the target block ( c > 0 )
 n : sequence number of candidate blocks starting with 0 ( n < c )
-a : relevancy factor ( a > 1 )
+a : relevance factor ( a > 1 )
 ```
 
 1차적인 변화량에 대한 분석만으로는 아직 명확한 관계가 찾아지지 않아 관련성 인자별로 대략적인 값을 사용합니다.
