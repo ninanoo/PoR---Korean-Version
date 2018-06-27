@@ -2,7 +2,7 @@
 
 <br/>
 
-###### ※ 변경 사항이나 추가되는 이슈들을 [페이스북](https://www.facebook.com/hcmoon82)에도 올리고 있습니다.<br/><br/><br/>이중지불 관련하여 문제가 될 수 있는 부분이 있어 [이슈](https://github.com/ninanoo/PoR---Korean-Version/issues/3)로 등록 하였습니다.<br/><br/>이미 확정된 인증의 위변조 시도에 대한 내용이 없어 일단 [이슈](https://github.com/ninanoo/PoR---Korean-Version/issues/4)에 추가 하였습니다.
+###### ※ 변경 사항이나 추가되는 이슈들을 [페이스북](https://www.facebook.com/hcmoon82)에도 올리고 있습니다.<br/><br/><br/>[이중지불 관련하여 문제](https://github.com/ninanoo/PoR---Korean-Version/issues/3)가 될 수 있는 부분이 있어 이슈로 등록 하였습니다.<br/><br/>[이미 확정된 인증의 위변조 시도](https://github.com/ninanoo/PoR---Korean-Version/issues/4)에 대한 내용이 없어 일단 이슈에 추가 하였습니다.
 
 <br/>
 
