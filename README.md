@@ -1,6 +1,9 @@
-###### ※ The English version of the article is [here](https://github.com/ninanoo/PoR).<br/><br/>이 블록체인 합의 알고리즘은 공개 알고리즘으로 아직 검증 단계입니다.<br/><br/>블록체인을 연구하고 개발하는 분들과 함께 토론하고 검증하며 알고리즘이 수정 발전되길 바랍니다.<br/><br/>계산 복잡도 이론에 근거하여 수학적으로 증명 가능한 알고리즘으로 비선형 수치와 확률 이론을 잘 다루시는 분들에 도움도 필요합니다.
+###### ※ The English version of the article is [here](https://github.com/ninanoo/PoR).<br/><br/><br/>이 블록체인 합의 알고리즘은 공개 알고리즘으로 아직 검증 단계입니다.<br/><br/>블록체인을 연구하고 개발하는 분들과 함께 토론하고 검증하며 알고리즘이 수정 발전되길 바랍니다.<br/><br/>계산 복잡도 이론에 근거하여 수학적으로 증명 가능한 알고리즘으로 비선형 수치와 확률 이론을 잘 다루시는 분들에 도움도 필요합니다.
+
+<br/>
+
 ###### ※ 이중지불 관련하여 문제가 될 수 있는 부분이 있어 [이슈](https://github.com/ninanoo/PoR---Korean-Version/issues/3)로 등록 하였습니다.
-###### ※ 이미 확정된 인증에 대한 위변조 시도에 대한 내용이 없어 일단 [이슈](https://github.com/ninanoo/PoR---Korean-Version/issues/4)에 추가 하였습니다.
+###### ※ 이미 확정된 인증의 위변조 시도에 대한 내용이 없어 일단 [이슈](https://github.com/ninanoo/PoR---Korean-Version/issues/4)에 추가 하였습니다.
 
 <br/>
 
