@@ -33,6 +33,19 @@
 
 <br/>
 
+> - **[블록과 체인의 구조 ( Structure of Blocks and Chains )](#블록과-체인의-구조--structure-of-blocks-and-chains-)**
+> - **[관련성과 합의 방법 ( Relevance and Consensus Mechanism )](#관련성과-합의-방법--relevance-and-consensus-mechanism-)**
+> - **[임계값과 관련성 효율비 ( Threshold Value and Relevance Efficiency Ratio )](#임계값과-관련성-효율비--threshold-value-and-relevance-efficiency-ratio-)**
+> - **[역방향 관련성과 게임 이론 ( Reverse Relevance and Game Theory )](#역방향-관련성과-게임-이론--reverse-relevance-and-game-theory-)**
+> - **[동기화 ( Synchronization )](#동기화--synchronization-)**
+> - **[이중지불 ( Double Spending )](#이중지불--double-spending-)**
+> - **[51% 공격과 지역화 ( 51% Attack and Localization )](#51-공격과-지역화--51-attack-and-localization-)**
+> - **[소유정보 ( Proprietary Information )](#소유정보--proprietary-information-)**
+> - **[노력에 대한 보상 ( Compensation for Effort )](#노력에-대한-보상--compensation-for-effort-)**
+> - **[확장성 ( Scalability )](#확장성--scalability-)**
+
+<br/>
+
 ## 블록과 체인의 구조 ( Structure of Blocks and Chains )
 
 아래 그림은 전체 이중체인에서 마지막으로 생성된 인증블록과 그 주변의 블록들을 확대하여 나타낸 것입니다.
